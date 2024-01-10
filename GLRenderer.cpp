@@ -54,7 +54,10 @@ void CGLRenderer::DrawScene(CDC* pDC)
 {
 	wglMakeCurrent(pDC->m_hDC, m_hrc);
 	//---------------------------------
-	
+	glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT);
+	glLoadIdentity();
+
+
 	//---------------------------------
 	wglMakeCurrent(NULL, NULL);
 }
@@ -66,7 +69,7 @@ void CGLRenderer::Reshape(CDC* pDC, int w, int h)
 	glViewport(0, 0, (GLsizei)w, (GLsizei)h);
 	glMatrixMode(GL_PROJECTION);
 	glLoadIdentity();
-	gluPerspective(40, (double)w / (double)h, 1, 100);
+	gluPerspective(60, (double)w / (double)h, 1, 100);
 	glMatrixMode(GL_MODELVIEW);
 	//---------------------------------
 	wglMakeCurrent(NULL, NULL);

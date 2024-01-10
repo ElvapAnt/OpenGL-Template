@@ -1,4 +1,8 @@
 #pragma once
+#include "GL\gl.h"
+#include "GL\glu.h"
+#include "GL\glaux.h"
+#include "GL\glut.h"
 class CGLRenderer
 {
 public:
